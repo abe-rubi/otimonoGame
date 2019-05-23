@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>落ちモノゲーム</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
+    <audio id="kaiten" preload="auto">
+      <source src="oto/kaiten.mp3" type="audio/mp3">
+    </audio>
+    <audio id="ochiru" preload="auto">
+      <source src="oto/ochiru.mp3" type="audio/mp3">
+    </audio>
+    <audio id="don" preload="auto">
+      <source src="oto/don.mp3" type="audio/mp3">
+    </audio>
+    <audio id="kieru" preload="auto">
+      <source src="oto/kieru.mp3" type="audio/mp3">
+    </audio>
+    <audio id="zenbu" preload="auto">
+      <source src="oto/zenbu.mp3" type="audio/mp3">
+    </audio>
+    <audio id="gameover" preload="auto">
+      <source src="oto/gameover.mp3" type="audio/mp3">
+    </audio>
+  </head>
+  <body onload="hajime()" onkeydown="ugokasu(event)">
+    <div id="mainTitle">
+      <h1>落ちモノゲーム</h1>
+      <div style="width:380px;">
+        スコア：<span id="tokuten">0</span>
+      </div>
+    </div>
+    <!-- canvasのwidthやheightはhtml内に記述する。cssはNG -->
+    <canvas id="back" width="240" height="440" style="position:absolute;left:20px;top:150px;background-color:#323232"></canvas>
+
+<!-- ブロックを描写するために、黒背景の手前に透明のレイヤーを設置 -->
+    <canvas id="game" width="240" height="440" style="position:absolute;left:20px;top:150px;background-color:rgba(0,0,0,0);"></canvas>
+    <canvas id="tsugi" width="80" height="80" style="position:absolute;left:300px;top:150px;background-color:#323232;"></canvas>
+    <button id="kaishibtn" onclick="gamekaishi()">
+      ゲーム<br>スタート
+    </button>
+  </body>
+</html>
